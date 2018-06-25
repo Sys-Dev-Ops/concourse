@@ -1,11 +1,12 @@
+#git clone https://github.com/Sys-Dev-Ops/concourse.git
+#cd ./concourse
+#chmod 755 ./concourse.sh
+#./concourse.sh
 # https://concourse-ci.org/install.html
 # Refer to https://www.digitalocean.com/community/tutorials/how-to-install-concourse-ci-on-ubuntu-16-04
-sudo apt-get update
+#sudo apt-get update
 apt-get install -y postgresql postgresql-contrib
-su - postgres
-createuser concourse
-createdb --owner=concourse atc
-exit
+su - postgres & createuser concourse & createdb --owner=concourse atc && exit
 /usr/sbin/update-rc.d postgresql enable
 service postgresql start
 wget https://github.com/concourse/concourse/releases/download/v3.14.1/concourse_linux_amd64
